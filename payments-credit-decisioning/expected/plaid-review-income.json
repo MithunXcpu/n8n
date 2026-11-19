@@ -1,0 +1,38 @@
+{
+  "case_id": "app_demo_review_001",
+  "source": "plaid",
+  "event_type": "application.submitted",
+  "decision": "review",
+  "borderline": true,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "AMOUNT_ABOVE_AUTO_APPROVE",
+    "INCOME_UNVERIFIED",
+    "NSF_PRESENT"
+  ],
+  "signals": {
+    "amount": "2500.00",
+    "currency": "USD",
+    "product": "account_funding",
+    "applicant_name": "Sam Patel",
+    "kyc_status": "verified",
+    "country": "US",
+    "name_match": "yes",
+    "address_match": "yes",
+    "document_status": "verified",
+    "income_verified": "no",
+    "nsf_count_90d": "1",
+    "available_balance": "4200.00",
+    "applications_7d": "1"
+  },
+  "rationale": {
+    "provider": "mock",
+    "text": "Rules send this plaid case to review. The reason codes are AMOUNT_ABOVE_AUTO_APPROVE, INCOME_UNVERIFIED, NSF_PRESENT. A reviewer should check these signals before capture or funding. The model did not run.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Hold the request. A reviewer checks the signals, then approves or denies.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: app_demo_review_001\nSource: plaid\nEvent: application.submitted\nDecision: REVIEW\nPolicy: payments-credit-v1\nBorderline: yes\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 2500.00\nCurrency: USD\nProduct: account_funding\nApplicant: Sam Patel\nKYC: verified\nCountry: US\nName match: yes\nAddress match: yes\nDocument: verified\nIncome verified: no\nNSF count in 90d: 1\nAvailable balance: 4200.00\nApplications in 7d: 1\n\nReason codes\n- AMOUNT_ABOVE_AUTO_APPROVE\n- INCOME_UNVERIFIED\n- NSF_PRESENT\n\nRationale (mock)\nRules send this plaid case to review. The reason codes are AMOUNT_ABOVE_AUTO_APPROVE, INCOME_UNVERIFIED, NSF_PRESENT. A reviewer should check these signals before capture or funding. The model did not run.\n\nNext step\nHold the request. A reviewer checks the signals, then approves or denies.\n\nModel\nThe model was not called. A local mock wrote the rationale for this review.\n"
+}

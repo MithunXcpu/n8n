@@ -1,0 +1,44 @@
+{
+  "case_id": "app_demo_approve_001",
+  "source": "plaid",
+  "event_type": "application.submitted",
+  "decision": "approve",
+  "borderline": false,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "KYC_VERIFIED",
+    "CURRENCY_PRESENT",
+    "AMOUNT_WITHIN_AUTO_APPROVE",
+    "NAME_MATCH",
+    "DOCUMENT_VERIFIED",
+    "INCOME_VERIFIED",
+    "NSF_CLEAR",
+    "BALANCE_COVERS_REQUEST",
+    "VELOCITY_QUIET"
+  ],
+  "signals": {
+    "amount": "800.00",
+    "currency": "USD",
+    "product": "installment_loan",
+    "applicant_name": "Alex Rivera",
+    "kyc_status": "verified",
+    "country": "US",
+    "name_match": "yes",
+    "address_match": "yes",
+    "document_status": "verified",
+    "income_verified": "yes",
+    "nsf_count_90d": "0",
+    "available_balance": "4200.55",
+    "applications_7d": "1"
+  },
+  "rationale": {
+    "provider": "rules",
+    "text": "Rules approve this plaid case. The reason codes are KYC_VERIFIED, CURRENCY_PRESENT, AMOUNT_WITHIN_AUTO_APPROVE, NAME_MATCH, DOCUMENT_VERIFIED, INCOME_VERIFIED, NSF_CLEAR, BALANCE_COVERS_REQUEST, VELOCITY_QUIET. No reviewer is required under policy payments-credit-v1.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Capture or fund the request. No reviewer is required under this policy.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: app_demo_approve_001\nSource: plaid\nEvent: application.submitted\nDecision: APPROVE\nPolicy: payments-credit-v1\nBorderline: no\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 800.00\nCurrency: USD\nProduct: installment_loan\nApplicant: Alex Rivera\nKYC: verified\nCountry: US\nName match: yes\nAddress match: yes\nDocument: verified\nIncome verified: yes\nNSF count in 90d: 0\nAvailable balance: 4200.55\nApplications in 7d: 1\n\nReason codes\n- KYC_VERIFIED\n- CURRENCY_PRESENT\n- AMOUNT_WITHIN_AUTO_APPROVE\n- NAME_MATCH\n- DOCUMENT_VERIFIED\n- INCOME_VERIFIED\n- NSF_CLEAR\n- BALANCE_COVERS_REQUEST\n- VELOCITY_QUIET\n\nRationale (rules)\nRules approve this plaid case. The reason codes are KYC_VERIFIED, CURRENCY_PRESENT, AMOUNT_WITHIN_AUTO_APPROVE, NAME_MATCH, DOCUMENT_VERIFIED, INCOME_VERIFIED, NSF_CLEAR, BALANCE_COVERS_REQUEST, VELOCITY_QUIET. No reviewer is required under policy payments-credit-v1.\n\nNext step\nCapture or fund the request. No reviewer is required under this policy.\n\nModel\nThe model was not called. Rules decided this case.\n"
+}

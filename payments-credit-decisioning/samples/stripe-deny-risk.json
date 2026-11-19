@@ -1,0 +1,32 @@
+{
+  "source": "stripe",
+  "demo": true,
+  "id": "pi_demo_deny_risk_001",
+  "event_type": "payment_intent.review_requested",
+  "amount": 18000,
+  "currency": "usd",
+  "payment_method": {
+    "type": "card",
+    "card": {
+      "brand": "visa",
+      "checks": {
+        "cvc_check": "pass",
+        "address_line1_check": "pass"
+      }
+    }
+  },
+  "customer_profile": {
+    "kyc_status": "verified",
+    "country": "US",
+    "email": "buyer.demo@example.com"
+  },
+  "risk": {
+    "score": 91,
+    "level": "highest"
+  },
+  "velocity": {
+    "payments_24h": 1,
+    "distinct_cards_24h": 1,
+    "failed_attempts_1h": 0
+  }
+}

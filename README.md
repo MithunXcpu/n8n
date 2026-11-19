@@ -1,3 +1,15 @@
+# Payments & Credit Decisioning Workbench
+
+This fork adds a local n8n workflow pack for a payments and credit decision demo. The pack shows the path a Stripe solutions engineer, a Plaid solutions engineer, or a Taktile decisioning engineer walks in a build session. An event arrives. A written policy returns approve, review, or deny. A model explains only the review cases. The run stores a decision card.
+
+The pack does not change n8n core and it does not touch enterprise code. You import one workflow. The workflow uses the Webhook, Code, IF, HTTP Request, and file nodes. A custom node is not required.
+
+The samples are mocked Stripe-style and Plaid-style payloads. They do not call Stripe or Plaid. They do not use live keys. Rules make the decision. NVIDIA's OpenAI-compatible API writes a short rationale for a review when `NVIDIA_API_KEY` is set. With no key, the workflow uses a deterministic mock rationale.
+
+Run it with Docker Compose from `payments-credit-decisioning/`. The policy, the sample results, and the exact commands are in [payments-credit-decisioning/docs/WORKBENCH.md](payments-credit-decisioning/docs/WORKBENCH.md).
+
+This demo does not compute velocity from stored payments. The event carries the counters. The webhook has no authentication. Use it on your machine. The pack is sample data and a local workflow, not a production decision service.
+
 ![Banner image](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/readme-banner.jpg)
 
 # n8n – The Platform for AI Agents and Workflow Automation

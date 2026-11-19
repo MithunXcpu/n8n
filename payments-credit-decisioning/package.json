@@ -1,0 +1,13 @@
+{
+  "name": "payments-credit-decisioning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test engine/decision-engine.test.mjs scripts/execute-workflow.test.mjs",
+    "build": "node scripts/build-workflow.mjs",
+    "expected": "node scripts/write-expected.mjs",
+    "import": "node scripts/import-and-publish.mjs",
+    "fire": "node scripts/fire-samples.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  }
+}

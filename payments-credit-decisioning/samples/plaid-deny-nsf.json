@@ -1,0 +1,41 @@
+{
+  "source": "plaid",
+  "demo": true,
+  "event_type": "application.submitted",
+  "id": "app_demo_deny_nsf_001",
+  "applicant": {
+    "id": "user_demo_002",
+    "name": "Jordan Lee",
+    "email": "jordan.lee.demo@example.com",
+    "kyc_status": "verified",
+    "country": "US"
+  },
+  "identity": {
+    "name_match": true,
+    "address_match": true,
+    "document_status": "verified"
+  },
+  "balance": {
+    "available": 900,
+    "current": 940,
+    "iso_currency_code": "USD"
+  },
+  "income": {
+    "monthly_income": 4100,
+    "income_verified": true
+  },
+  "cashflow": {
+    "nsf_count_90d": 6,
+    "inflow_30d": 4100,
+    "outflow_30d": 4300
+  },
+  "requested": {
+    "product": "ach_debit",
+    "amount": 250,
+    "currency": "USD"
+  },
+  "velocity": {
+    "applications_7d": 1,
+    "linked_institutions": 1
+  }
+}

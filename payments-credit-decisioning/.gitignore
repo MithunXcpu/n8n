@@ -1,0 +1,5 @@
+audit-log/**
+!audit-log/.gitkeep
+!audit-log/cards/
+!audit-log/cards/.gitkeep
+.env

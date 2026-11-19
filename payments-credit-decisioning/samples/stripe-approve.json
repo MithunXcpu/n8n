@@ -1,0 +1,42 @@
+{
+  "source": "stripe",
+  "demo": true,
+  "id": "evt_demo_approve_001",
+  "type": "payment_intent.amount_capturable_updated",
+  "data": {
+    "object": {
+      "id": "pi_demo_approve_001",
+      "object": "payment_intent",
+      "amount": 12000,
+      "currency": "usd",
+      "customer": "cus_demo_verified",
+      "payment_method": {
+        "type": "card",
+        "card": {
+          "brand": "visa",
+          "country": "US",
+          "funding": "credit",
+          "checks": {
+            "cvc_check": "pass",
+            "address_line1_check": "pass"
+          }
+        }
+      }
+    }
+  },
+  "customer_profile": {
+    "kyc_status": "verified",
+    "country": "US",
+    "email": "buyer.demo@example.com"
+  },
+  "risk": {
+    "score": 12,
+    "level": "normal"
+  },
+  "velocity": {
+    "payments_24h": 1,
+    "amount_24h_cents": 12000,
+    "distinct_cards_24h": 1,
+    "failed_attempts_1h": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "app_demo_deny_nsf_001",
+  "source": "plaid",
+  "event_type": "application.submitted",
+  "decision": "deny",
+  "borderline": false,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "NSF_COUNT_HIGH"
+  ],
+  "signals": {
+    "amount": "250.00",
+    "currency": "USD",
+    "product": "ach_debit",
+    "applicant_name": "Jordan Lee",
+    "kyc_status": "verified",
+    "country": "US",
+    "name_match": "yes",
+    "address_match": "yes",
+    "document_status": "verified",
+    "income_verified": "yes",
+    "nsf_count_90d": "6",
+    "available_balance": "900.00",
+    "applications_7d": "1"
+  },
+  "rationale": {
+    "provider": "rules",
+    "text": "Rules deny this plaid case. The reason codes are NSF_COUNT_HIGH. The model cannot override a deny.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Do not capture or fund the request. Keep the reason codes and close the case.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: app_demo_deny_nsf_001\nSource: plaid\nEvent: application.submitted\nDecision: DENY\nPolicy: payments-credit-v1\nBorderline: no\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 250.00\nCurrency: USD\nProduct: ach_debit\nApplicant: Jordan Lee\nKYC: verified\nCountry: US\nName match: yes\nAddress match: yes\nDocument: verified\nIncome verified: yes\nNSF count in 90d: 6\nAvailable balance: 900.00\nApplications in 7d: 1\n\nReason codes\n- NSF_COUNT_HIGH\n\nRationale (rules)\nRules deny this plaid case. The reason codes are NSF_COUNT_HIGH. The model cannot override a deny.\n\nNext step\nDo not capture or fund the request. Keep the reason codes and close the case.\n\nModel\nThe model was not called. Rules decided this case.\n"
+}
