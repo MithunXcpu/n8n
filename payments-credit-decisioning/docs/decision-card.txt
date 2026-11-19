@@ -1,0 +1,36 @@
+DECISION CARD
+Case: pi_demo_review_001
+Source: stripe
+Event: payment_intent.review_requested
+Decision: REVIEW
+Policy: payments-credit-v1
+Borderline: yes
+Decided at: 2026-11-11T12:00:00.000Z
+
+Signals
+Amount: 2500.00
+Currency: USD
+KYC: pending
+Country: US
+Risk score: 46
+Risk level: elevated
+CVC check: pass
+AVS check: pass
+Payments in 24h: 2
+Failed attempts in 1h: 0
+Distinct cards in 24h: 1
+
+Reason codes
+- KYC_PENDING
+- AMOUNT_ABOVE_AUTO_APPROVE
+- RISK_ELEVATED
+- RISK_LEVEL_ELEVATED
+
+Rationale (mock)
+Rules send this stripe case to review. The reason codes are KYC_PENDING, AMOUNT_ABOVE_AUTO_APPROVE, RISK_ELEVATED, RISK_LEVEL_ELEVATED. A reviewer should check these signals before capture or funding. The model did not run.
+
+Next step
+Hold the request. A reviewer checks the signals, then approves or denies.
+
+Model
+The model was not called. A local mock wrote the rationale for this review.

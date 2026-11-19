@@ -1,0 +1,32 @@
+{
+  "source": "stripe",
+  "demo": true,
+  "id": "pi_demo_review_001",
+  "event_type": "payment_intent.review_requested",
+  "amount": 250000,
+  "currency": "usd",
+  "payment_method": {
+    "type": "card",
+    "card": {
+      "brand": "mastercard",
+      "checks": {
+        "cvc_check": "pass",
+        "address_line1_check": "pass"
+      }
+    }
+  },
+  "customer_profile": {
+    "kyc_status": "pending",
+    "country": "US",
+    "email": "buyer.demo@example.com"
+  },
+  "risk": {
+    "score": 46,
+    "level": "elevated"
+  },
+  "velocity": {
+    "payments_24h": 2,
+    "distinct_cards_24h": 1,
+    "failed_attempts_1h": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source": "plaid",
+  "demo": true,
+  "event_type": "application.submitted",
+  "id": "app_demo_review_001",
+  "applicant": {
+    "id": "user_demo_003",
+    "name": "Sam Patel",
+    "email": "sam.patel.demo@example.com",
+    "kyc_status": "verified",
+    "country": "US"
+  },
+  "identity": {
+    "name_match": true,
+    "address_match": true,
+    "document_status": "verified"
+  },
+  "balance": {
+    "available": 4200,
+    "current": 4300,
+    "iso_currency_code": "USD"
+  },
+  "income": {
+    "monthly_income": 5000,
+    "income_verified": false
+  },
+  "cashflow": {
+    "nsf_count_90d": 1,
+    "inflow_30d": 4800,
+    "outflow_30d": 3900
+  },
+  "requested": {
+    "product": "account_funding",
+    "amount": 2500,
+    "currency": "USD"
+  },
+  "velocity": {
+    "applications_7d": 1,
+    "linked_institutions": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "case_id": "pi_demo_review_001",
+  "source": "stripe",
+  "event_type": "payment_intent.review_requested",
+  "decision": "review",
+  "borderline": true,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "KYC_PENDING",
+    "AMOUNT_ABOVE_AUTO_APPROVE",
+    "RISK_ELEVATED",
+    "RISK_LEVEL_ELEVATED"
+  ],
+  "signals": {
+    "amount": "2500.00",
+    "currency": "USD",
+    "kyc_status": "pending",
+    "country": "US",
+    "risk_score": "46",
+    "risk_level": "elevated",
+    "cvc_check": "pass",
+    "avs_check": "pass",
+    "payments_24h": "2",
+    "failed_attempts_1h": "0",
+    "distinct_cards_24h": "1"
+  },
+  "rationale": {
+    "provider": "mock",
+    "text": "Rules send this stripe case to review. The reason codes are KYC_PENDING, AMOUNT_ABOVE_AUTO_APPROVE, RISK_ELEVATED, RISK_LEVEL_ELEVATED. A reviewer should check these signals before capture or funding. The model did not run.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Hold the request. A reviewer checks the signals, then approves or denies.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: pi_demo_review_001\nSource: stripe\nEvent: payment_intent.review_requested\nDecision: REVIEW\nPolicy: payments-credit-v1\nBorderline: yes\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 2500.00\nCurrency: USD\nKYC: pending\nCountry: US\nRisk score: 46\nRisk level: elevated\nCVC check: pass\nAVS check: pass\nPayments in 24h: 2\nFailed attempts in 1h: 0\nDistinct cards in 24h: 1\n\nReason codes\n- KYC_PENDING\n- AMOUNT_ABOVE_AUTO_APPROVE\n- RISK_ELEVATED\n- RISK_LEVEL_ELEVATED\n\nRationale (mock)\nRules send this stripe case to review. The reason codes are KYC_PENDING, AMOUNT_ABOVE_AUTO_APPROVE, RISK_ELEVATED, RISK_LEVEL_ELEVATED. A reviewer should check these signals before capture or funding. The model did not run.\n\nNext step\nHold the request. A reviewer checks the signals, then approves or denies.\n\nModel\nThe model was not called. A local mock wrote the rationale for this review.\n"
+}

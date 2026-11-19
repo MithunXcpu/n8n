@@ -1,0 +1,42 @@
+{
+  "source": "plaid",
+  "demo": true,
+  "event_type": "application.submitted",
+  "id": "app_demo_approve_001",
+  "applicant": {
+    "id": "user_demo_001",
+    "name": "Alex Rivera",
+    "email": "alex.rivera.demo@example.com",
+    "kyc_status": "verified",
+    "country": "US"
+  },
+  "identity": {
+    "name_match": true,
+    "address_match": true,
+    "phone_match": true,
+    "document_status": "verified"
+  },
+  "balance": {
+    "available": 4200.55,
+    "current": 4500.1,
+    "iso_currency_code": "USD"
+  },
+  "income": {
+    "monthly_income": 6200,
+    "income_verified": true
+  },
+  "cashflow": {
+    "nsf_count_90d": 0,
+    "inflow_30d": 6400,
+    "outflow_30d": 5100
+  },
+  "requested": {
+    "product": "installment_loan",
+    "amount": 800,
+    "currency": "USD"
+  },
+  "velocity": {
+    "applications_7d": 1,
+    "linked_institutions": 1
+  }
+}

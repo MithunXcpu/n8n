@@ -1,0 +1,34 @@
+{
+  "case_id": "pi_demo_deny_velocity_001",
+  "source": "stripe",
+  "event_type": "payment_intent.review_requested",
+  "decision": "deny",
+  "borderline": false,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "VELOCITY_CARD_TESTING"
+  ],
+  "signals": {
+    "amount": "45.00",
+    "currency": "USD",
+    "kyc_status": "verified",
+    "country": "US",
+    "risk_score": "18",
+    "risk_level": "normal",
+    "cvc_check": "pass",
+    "avs_check": "pass",
+    "payments_24h": "6",
+    "failed_attempts_1h": "1",
+    "distinct_cards_24h": "5"
+  },
+  "rationale": {
+    "provider": "rules",
+    "text": "Rules deny this stripe case. The reason codes are VELOCITY_CARD_TESTING. The model cannot override a deny.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Do not capture or fund the request. Keep the reason codes and close the case.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: pi_demo_deny_velocity_001\nSource: stripe\nEvent: payment_intent.review_requested\nDecision: DENY\nPolicy: payments-credit-v1\nBorderline: no\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 45.00\nCurrency: USD\nKYC: verified\nCountry: US\nRisk score: 18\nRisk level: normal\nCVC check: pass\nAVS check: pass\nPayments in 24h: 6\nFailed attempts in 1h: 1\nDistinct cards in 24h: 5\n\nReason codes\n- VELOCITY_CARD_TESTING\n\nRationale (rules)\nRules deny this stripe case. The reason codes are VELOCITY_CARD_TESTING. The model cannot override a deny.\n\nNext step\nDo not capture or fund the request. Keep the reason codes and close the case.\n\nModel\nThe model was not called. Rules decided this case.\n"
+}

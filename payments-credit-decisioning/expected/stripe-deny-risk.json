@@ -1,0 +1,35 @@
+{
+  "case_id": "pi_demo_deny_risk_001",
+  "source": "stripe",
+  "event_type": "payment_intent.review_requested",
+  "decision": "deny",
+  "borderline": false,
+  "policy_version": "payments-credit-v1",
+  "reason_codes": [
+    "RISK_LEVEL_HIGHEST",
+    "RISK_SCORE_HIGH"
+  ],
+  "signals": {
+    "amount": "180.00",
+    "currency": "USD",
+    "kyc_status": "verified",
+    "country": "US",
+    "risk_score": "91",
+    "risk_level": "highest",
+    "cvc_check": "pass",
+    "avs_check": "pass",
+    "payments_24h": "1",
+    "failed_attempts_1h": "0",
+    "distinct_cards_24h": "1"
+  },
+  "rationale": {
+    "provider": "rules",
+    "text": "Rules deny this stripe case. The reason codes are RISK_LEVEL_HIGHEST, RISK_SCORE_HIGH. The model cannot override a deny.",
+    "overrides_decision": false,
+    "fallback_reason": null,
+    "model": null
+  },
+  "next_step": "Do not capture or fund the request. Keep the reason codes and close the case.",
+  "decided_at": "2026-11-11T12:00:00.000Z",
+  "audit_card": "DECISION CARD\nCase: pi_demo_deny_risk_001\nSource: stripe\nEvent: payment_intent.review_requested\nDecision: DENY\nPolicy: payments-credit-v1\nBorderline: no\nDecided at: 2026-11-11T12:00:00.000Z\n\nSignals\nAmount: 180.00\nCurrency: USD\nKYC: verified\nCountry: US\nRisk score: 91\nRisk level: highest\nCVC check: pass\nAVS check: pass\nPayments in 24h: 1\nFailed attempts in 1h: 0\nDistinct cards in 24h: 1\n\nReason codes\n- RISK_LEVEL_HIGHEST\n- RISK_SCORE_HIGH\n\nRationale (rules)\nRules deny this stripe case. The reason codes are RISK_LEVEL_HIGHEST, RISK_SCORE_HIGH. The model cannot override a deny.\n\nNext step\nDo not capture or fund the request. Keep the reason codes and close the case.\n\nModel\nThe model was not called. Rules decided this case.\n"
+}
